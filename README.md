@@ -1,12 +1,12 @@
-# 🧶 E-commerce Amigurumi(nome do e-commerce) - Backend
+#  E-commerce Amigurumi(nome do e-commerce) - Backend
 
 API REST em Node.js para gerenciamento de loja de amigurumi com finalização de pedidos via WhatsApp.
 
-## 💡 Sobre o Projeto
+##  Sobre o Projeto
 
 Sistema de e-commerce onde o cliente realiza o pedido pelo site e finaliza o atendimento via WhatsApp.
 
-## 🛠️ Tecnologias
+##  Tecnologias
 
 - Node.js
 - Express
@@ -15,7 +15,7 @@ Sistema de e-commerce onde o cliente realiza o pedido pelo site e finaliza o ate
 - MD5 (criptografia de senha)
 - Dotenv
 
-## 🚀 Como rodar
+##  Como rodar
 
 1. Clone o repositório:
 ```bash
@@ -41,7 +41,7 @@ no proprio backend tera o script do banco e da senha ja colocada para acessar o 
 
 npm start
 
-## 📡 Endpoints
+##  Endpoints
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
@@ -53,7 +53,7 @@ npm start
 | POST | /api/pedidos | Criar pedido |
 | GET | /api/pedidos | Listar pedidos (admin) |
 
-## 🗄️ Banco de Dados
+##  Banco de Dados
 
 | Tabela | Descrição |
 |--------|-----------|
