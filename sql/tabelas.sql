@@ -1,0 +1,53 @@
+USE webcroche;
+
+CREATE TABLE IF NOT EXISTS login (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(200) NOT NULL,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS produto (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(80) NOT NULL,
+  quantidade INT NOT NULL,
+  descricao VARCHAR(200),
+  img VARCHAR(200),
+  preco DECIMAL(10,2) NOT NULL,
+  dataCriacao DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS pedido (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome_cliente VARCHAR(200) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  telefone CHAR(13),
+  cpf CHAR(11),
+  observacao VARCHAR(200),
+  data_pedido DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS pedido_final (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  idPedido INT NOT NULL,
+  idProduto INT NOT NULL,
+  quantidade INT NOT NULL,
+  preco_unitario DECIMAL(10,2) NOT NULL,
+  FOREIGN KEY (idPedido) REFERENCES pedido(id),
+  FOREIGN KEY (idProduto) REFERENCES produto(id)
+);
+
+CREATE TABLE IF NOT EXISTS rendimento (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  quantidade INT NOT NULL,
+  idPedido INT NOT NULL,
+  FOREIGN KEY (idPedido) REFERENCES pedido(id)
+);
+
+INSERT INTO login (nome, email, senha)
+VALUES ('Admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3');
+
+
+
+
+
